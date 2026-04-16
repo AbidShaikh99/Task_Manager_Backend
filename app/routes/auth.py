@@ -30,6 +30,8 @@ def register(user : UserCreate, db : Session = Depends(get_db)):
         role = user.role
         
     )
+    
+    
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
